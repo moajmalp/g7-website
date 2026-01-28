@@ -64,14 +64,16 @@ const HeroSection = () => (
               Now Serving 100+ Disciplined Traders
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold leading-[1.1] mb-8 tracking-tight">
-              Build a Second <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Income with Copy Trading</span>
+              Build Your Second <br className="hidden md:block" />
+              Income with <br className="hidden lg:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Algo Trading</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <p className="text-lg md:text-xl text-secondary-text max-w-2xl mb-10 leading-relaxed font-inter">
-              We use structured trading systems to remove emotion and execute disciplined strategies for steady growth.
+              Trading is not easy and involves risk. We use data-driven algorithmic systems.to
+              help you grow steadily.
             </p>
           </FadeIn>
 
