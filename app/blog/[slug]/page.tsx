@@ -53,8 +53,8 @@ export default function BlogDetail() {
                         </Link>
 
                         <header className="mb-12">
-                            <div className="flex items-center gap-4 text-sm text-primary font-bold uppercase tracking-widest mb-6">
-                                <span>{blog.category}</span>
+                            <div className="flex items-center gap-4 text-sm font-bold uppercase tracking-widest mb-6">
+                                <span className="text-white bg-brand-accent/20 px-3 py-1 rounded-full border border-brand-accent/30">{blog.category}</span>
                                 <span className="w-1 h-1 rounded-full bg-white/20" />
                                 <span className="text-secondary-text font-medium">{blog.readTime}</span>
                             </div>
@@ -82,10 +82,15 @@ export default function BlogDetail() {
                         </header>
                     </FadeIn>
 
-                    {/* Featured Image Aspect Placeholder */}
+                    {/* Featured Image */}
                     <FadeIn delay={0.2}>
-                        <div className="aspect-[21/9] w-full bg-gradient-to-br from-primary/10 via-secondary/5 to-dark rounded-3xl mb-16 overflow-hidden relative shadow-2xl">
-                            <div className="absolute inset-0 bg-grid-white/[0.02]" />
+                        <div className="aspect-[21/9] w-full rounded-3xl mb-16 overflow-hidden relative shadow-2xl">
+                            <img
+                                src={blog.image}
+                                alt={blog.title}
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                         </div>
                     </FadeIn>
 

@@ -13,6 +13,10 @@ import {
   Wallet,
   Zap,
   ChevronDown,
+  Mail,
+  Phone,
+  MessageSquare,
+  MapPin,
   Flag,
   TrendingUp
 } from "lucide-react";
@@ -61,8 +65,7 @@ const HeroSection = () => (
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold leading-[1.1] mb-8 tracking-tight">
               Build a Second <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Income with Copy</span> <br />
-              Trading
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Income with Copy Trading</span>
             </h1>
           </FadeIn>
 
@@ -571,8 +574,88 @@ const FAQSection = () => {
   );
 };
 
+const ContactSection = () => (
+  <section id="contact" className="py-24 md:py-32 bg-linear-to-b from-brand-deep via-[#11210c] to-brand-deep relative overflow-hidden" aria-labelledby="contact-heading">
+    {/* Decorative Background Glows */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/5 rounded-full blur-[180px] -z-10" />
+
+    <div className="container mx-auto px-6 max-w-6xl relative z-10">
+      <div className="flex flex-col lg:flex-row gap-16">
+        {/* Contact Info Side */}
+        <div className="flex-1">
+          <FadeIn>
+            <span className="text-brand-accent font-bold tracking-widest uppercase text-xs mb-4 block underline decoration-brand-accent/30 underline-offset-4">Get in Touch</span>
+            <h2 id="contact-heading" className="text-4xl md:text-6xl font-outfit font-bold mb-8 text-white leading-tight">Let&apos;s Discuss Your <br /> Wealth Strategy</h2>
+            <p className="text-xl text-brand-muted mb-12 max-w-lg leading-relaxed">
+              Whether you have questions about our algorithms or want to join our elite community, our team is ready to assist.
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                { icon: <Mail className="text-brand-accent" />, title: "Email Us", detail: "info@g7holdings.com", sub: "Replies within 24h" },
+                { icon: <Phone className="text-brand-accent" />, title: "Call Support", detail: "+91 98765 43210", sub: "Mon-Fri, 9am - 6pm" },
+                { icon: <MessageSquare className="text-brand-accent" />, title: "Direct Chat", detail: "WhatsApp Support", sub: "+91 98765 43211" },
+                { icon: <MapPin className="text-brand-accent" />, title: "Our Office", detail: "Hyderabad, India", sub: "Financial District" }
+              ].map((item, i) => (
+                <div key={i} className="flex flex-row items-center gap-5 p-5 glass-card rounded-2xl hover:bg-white/[0.04] transition-colors group/card">
+                  <div className="p-3 bg-brand-accent/10 rounded-xl group-hover/card:bg-brand-accent/20 transition-colors shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-outfit font-bold text-white text-sm mb-0.5">{item.title}</h3>
+                    <p className="text-brand-text-light font-bold text-[13px] leading-tight break-all">{item.detail}</p>
+                    <p className="text-[10px] text-brand-muted mt-0.5">{item.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Contact Form Side */}
+        <div className="flex-1">
+          <FadeIn delay={0.2}>
+            <div className="glass-card p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent opacity-50" />
+              <h3 className="text-2xl font-outfit font-bold mb-8 text-white">Send Us a Message</h3>
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-brand-muted uppercase tracking-widest px-1">Full Name</label>
+                    <input type="text" placeholder="John Doe" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors" />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-xs font-bold text-brand-muted uppercase tracking-widest px-1">Email Address</label>
+                    <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors" />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-brand-muted uppercase tracking-widest px-1">Subject</label>
+                  <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors appearance-none">
+                    <option className="bg-brand-deep">Algorithmic Trading Inquiry</option>
+                    <option className="bg-brand-deep">Investment Opportunity</option>
+                    <option className="bg-brand-deep">Technical Support</option>
+                    <option className="bg-brand-deep">Other</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-brand-muted uppercase tracking-widest px-1">Message</label>
+                  <textarea rows={4} placeholder="Tell us about your trading goals..." className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors resize-none"></textarea>
+                </div>
+                <button type="submit" className="btn-primary w-full py-4 text-lg font-bold shadow-xl shadow-brand-accent/20 group-hover:scale-[1.02] transition-transform">
+                  Send Your Message
+                </button>
+              </form>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 const FooterCTA = () => (
-  <section id="contact" className="py-24 md:py-32 relative overflow-hidden bg-linear-to-b from-brand-deep via-[#11210c] to-black">
+  <section className="py-24 md:py-32 relative overflow-hidden bg-linear-to-b from-brand-deep via-[#11210c] to-black">
     {/* Animated background circles */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/10 rounded-full blur-[180px] -z-10 animate-pulse" />
     <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/5 rounded-full blur-[140px] -z-10" />
@@ -595,7 +678,7 @@ const FooterCTA = () => (
                 Get Started Now
               </button>
               <p className="text-sm font-semibold text-brand-gold italic bg-brand-gold/10 px-4 py-2 rounded-full border border-brand-gold/20">
-                Limited openings for February
+                Limited openings for team
               </p>
             </div>
           </div>
@@ -625,6 +708,7 @@ export default function Home() {
         <TrustSection />
         <MissionVisionSection />
         <FAQSection />
+        <ContactSection />
       </main>
       <footer>
         <FooterCTA />

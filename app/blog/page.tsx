@@ -28,11 +28,15 @@ export default function BlogListing() {
                             <FadeIn key={blog.id} delay={i * 0.1}>
                                 <Link href={`/blog/${blog.id}`} className="group block h-full">
                                     <div className="glass-card overflow-hidden h-full flex flex-col border-white/5 group-hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
-                                        {/* Image Placeholder with Gradient */}
                                         <div className="relative h-48 w-full bg-dark/50 overflow-hidden">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:scale-110 transition-transform duration-700" />
+                                            <img
+                                                src={blog.image}
+                                                alt={blog.title}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                                             <div className="absolute top-4 left-4">
-                                                <span className="px-3 py-1 rounded-full bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-wider border border-primary/20">
+                                                <span className="px-3 py-1 rounded-full bg-brand-accent/40 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-brand-accent/30 shadow-lg">
                                                     {blog.category}
                                                 </span>
                                             </div>

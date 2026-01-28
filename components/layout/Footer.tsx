@@ -45,11 +45,10 @@ export const Footer = () => {
                         <ul className="space-y-4">
                             {[
                                 { name: "Home", href: "/" },
-                                { name: "About", href: "#about" },
-                                { name: "Platform", href: "#platform" },
+                                { name: "About", href: "/#about" },
                                 { name: "Blog", href: "/blog" },
-                                { name: "Contact", href: "#contact" },
-                                { name: "FAQ", href: "#faq-heading" }
+                                { name: "Contact", href: "/#contact" },
+                                { name: "FAQ", href: "/#faq-heading" }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link

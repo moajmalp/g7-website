@@ -21,21 +21,18 @@ export const Navbar = () => {
                     <Link href="/" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
                         Home
                     </Link>
-                    <Link href="#about" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
+                    <Link href="/#about" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
                         About
-                    </Link>
-                    <Link href="#platform" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
-                        Platform
                     </Link>
                     <Link href="/blog" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
                         Blog
                     </Link>
-                    <Link href="#contact" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
+                    <Link href="/#contact" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
                         Contact
                     </Link>
                 </div>
 
-                <Link href="#contact" className="btn-primary py-2 px-5 text-sm hover:scale-105 active:scale-95 transition-transform" aria-label="Get started with G7 Holdings">
+                <Link href="/#contact" className="btn-primary py-2 px-5 text-sm hover:scale-105 active:scale-95 transition-transform" aria-label="Get started with G7 Holdings">
                     Get Started
                 </Link>
             </div>

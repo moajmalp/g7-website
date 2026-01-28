@@ -36,7 +36,7 @@ export const blogs: BlogPost[] = [
         date: "Jan 12, 2026",
         category: "Insights",
         readTime: "5 min read",
-        image: "/blog/algo-rise.jpg", // We'll need to handle placeholders or real images
+        image: "/blog/algo-rise.png", // We'll need to handle placeholders or real images
         author: {
             name: "Alex Thorne",
             role: "Lead Strategist",
@@ -59,7 +59,7 @@ export const blogs: BlogPost[] = [
         date: "Jan 18, 2026",
         category: "Strategy",
         readTime: "7 min read",
-        image: "/blog/risk-mgmt.jpg",
+        image: "/blog/risk-mgmt.png",
         author: {
             name: "Sarah Chen",
             role: "Risk Officer",
@@ -79,7 +79,7 @@ export const blogs: BlogPost[] = [
         date: "Jan 20, 2026",
         category: "Lifestyle",
         readTime: "4 min read",
-        image: "/blog/passive-income.jpg",
+        image: "/blog/passive-income.png",
         author: {
             name: "Michael G7",
             role: "Founder",
