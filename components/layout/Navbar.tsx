@@ -27,6 +27,9 @@ export const Navbar = () => {
                     <Link href="#platform" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
                         Platform
                     </Link>
+                    <Link href="/blog" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
+                        Blog
+                    </Link>
                     <Link href="#contact" className="text-secondary-text hover:text-white transition-colors text-sm font-medium">
                         Contact
                     </Link>

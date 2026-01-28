@@ -47,6 +47,7 @@ export const Footer = () => {
                                 { name: "Home", href: "/" },
                                 { name: "About", href: "#about" },
                                 { name: "Platform", href: "#platform" },
+                                { name: "Blog", href: "/blog" },
                                 { name: "Contact", href: "#contact" },
                                 { name: "FAQ", href: "#faq-heading" }
                             ].map((link) => (

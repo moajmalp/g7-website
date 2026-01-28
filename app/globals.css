@@ -1,18 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark: #183113;
-  --color-light: #f1e8cb;
+  --color-brand-deep: #183113;
+  --color-brand-accent: #9dd319;
+  --color-brand-gold: #f2d070;
+  --color-brand-text-light: #f1e8cb;
+  --color-brand-muted: #acb98b;
 
-  --color-background: var(--color-dark);
-  --color-foreground: var(--color-light);
+  --color-primary: var(--color-brand-accent);
+  --color-secondary: var(--color-brand-gold);
+  --color-dark: var(--color-brand-deep);
+  --color-light: var(--color-brand-text-light);
+  --color-secondary-text: var(--color-brand-muted);
 
-  --color-primary: #9dd319;
-  --color-primary-foreground: #183113;
+  --color-white: var(--color-brand-text-light);
+  --color-background: var(--color-brand-deep);
+  --color-foreground: var(--color-brand-text-light);
 
-  --color-secondary: #f2d070;
-  --color-secondary-foreground: #183113;
-  --color-secondary-text: #acb98b;
+  --font-heading: "Plus Jakarta Sans", var(--font-jakarta), sans-serif;
+  --font-body: "Outfit", var(--font-outfit), sans-serif;
 
   --radius-lg: 1rem;
 }
@@ -23,36 +29,97 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--color-brand-deep);
+    background-image: radial-gradient(circle at top, rgba(157, 211, 25, 0.15) 0%, #183113 50%, #183113 100%);
+    color: var(--color-brand-text-light);
+    font-family: var(--font-body);
     @apply antialiased;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: var(--color-brand-text-light);
+  }
+
   ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-primary-foreground);
+    background-color: var(--color-brand-accent);
+    color: var(--color-brand-deep);
+  }
+}
+
+@layer utilities {
+  .bg-forest-glow {
+    background: radial-gradient(circle at top, rgba(157, 211, 25, 0.15), #183113, #183113);
+  }
+
+  .btn-algorithmic {
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold transition-all duration-500 bg-linear-to-b from-brand-accent to-[#8ab815] text-brand-deep hover:scale-[1.02] active:scale-95;
+    box-shadow: 0 4px 14px 0 rgba(157, 211, 25, 0.39);
+  }
+
+  .btn-algorithmic:hover {
+    box-shadow: 0 6px 20px rgba(157, 211, 25, 0.23);
+  }
+
+  .glass-surface {
+    @apply bg-[#183113]/40 backdrop-blur-xl border border-[#9dd319]/20 rounded-2xl;
+  }
+
+  .text-brand-gradient {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-[#9dd319] to-[#f2d070];
+  }
+
+  .pulse-active {
+    animation: pulse-active 3s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  }
+}
+
+@keyframes pulse-active {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 bg-primary text-primary-foreground hover:opacity-90 active:scale-95;
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold transition-all duration-500 bg-linear-to-b from-brand-accent to-[#8ab815] text-brand-deep hover:scale-[1.02] active:scale-95;
+    box-shadow: 0 4px 14px 0 rgba(157, 211, 25, 0.39);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(157, 211, 25, 0.23);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium transition-all duration-300 bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground active:scale-95;
+    @apply inline-flex items-center justify-center px-8 py-3 rounded-full font-semibold transition-all duration-300 bg-transparent border border-brand-accent/30 text-brand-accent hover:bg-brand-accent/10 hover:border-brand-accent/50 active:scale-95;
   }
 
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+    @apply bg-[#183113]/40 backdrop-blur-xl border border-[#9dd319]/20 rounded-2xl p-6 transition-all duration-500 hover:bg-brand-accent/5 hover:border-brand-accent/30;
   }
 
-  .fintech-card {
-    @apply bg-[#1e3d18] border border-[#2a5221] rounded-2xl p-6 shadow-xl;
+  /* Legacy compatibility or specific refined components */
+  .prose {
+    @apply text-brand-text-light;
   }
-}
 
-/* Custom transitions and animations */
-.transition-smooth {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  .prose h2 {
+    @apply font-heading font-bold text-3xl mt-10 mb-5;
+  }
+
+  .prose p {
+    @apply text-brand-muted leading-relaxed mb-6 text-lg;
+  }
 }

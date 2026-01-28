@@ -9,25 +9,17 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                background: "#183113", // Primary Background (Deep Forest Green)
-                foreground: "#f1e8cb", // Primary Text (White Rock)
-                primary: {
-                    DEFAULT: "#9dd319", // Primary Accent (Atlantis Green)
-                    foreground: "#183113",
-                },
-                secondary: {
-                    DEFAULT: "#f2d070", // Secondary Accent (Goldenrod)
-                    foreground: "#183113",
-                },
-                "secondary-text": "#acb98b", // Secondary Text
-                accent: {
-                    DEFAULT: "#9dd319",
-                    golden: "#f2d070",
-                },
+                "brand-deep": "#183113",
+                "brand-accent": "#9dd319",
+                "brand-gold": "#f2d070",
+                "brand-text-light": "#f1e8cb",
+                "brand-muted": "#acb98b",
+                background: "#183113",
+                foreground: "#f1e8cb",
             },
             fontFamily: {
-                inter: ["var(--font-inter)", "sans-serif"],
-                outfit: ["var(--font-outfit)", "sans-serif"],
+                sans: ["var(--font-outfit)", "ui-sans-serif", "system-ui"],
+                heading: ["var(--font-jakarta)", "ui-sans-serif", "system-ui"],
             },
         },
     },

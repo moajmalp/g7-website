@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Plus_Jakarta_Sans, Outfit } from "next/font/google";
 import "./globals.css";
 import { FramerProvider } from "@/components/providers/framer-provider";
 
-const inter = Inter({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -55,7 +55,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }}>
       <body
-        className={`${inter.variable} ${outfit.variable} font-inter antialiased bg-[#183113] text-[#f1e8cb]`}
+        className={`${jakarta.variable} ${outfit.variable} antialiased`}
       >
         <FramerProvider>
           {children}
