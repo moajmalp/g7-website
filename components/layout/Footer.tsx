@@ -90,7 +90,7 @@ export const Footer = () => {
                         <h3 className="text-white font-outfit font-bold text-lg mb-8 uppercase tracking-widest">Contact Info</h3>
                         <ul className="space-y-6">
                             <li className="flex items-start gap-4 group">
-                                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <div className="p-3 rounded-full bg-white/5 text-white group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                                     <PhoneCall size={18} />
                                 </div>
                                 <div>
@@ -101,7 +101,7 @@ export const Footer = () => {
                                 </div>
                             </li>
                             <li className="flex items-start gap-4 group">
-                                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <div className="p-3 rounded-full bg-white/5 text-white group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                                     <Mail size={18} />
                                 </div>
                                 <div>
@@ -112,7 +112,7 @@ export const Footer = () => {
                                 </div>
                             </li>
                             <li className="flex items-start gap-4 group">
-                                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <div className="p-3 rounded-full bg-white/5 text-white group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                                     <MapPin size={18} />
                                 </div>
                                 <div>

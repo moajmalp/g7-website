@@ -72,8 +72,7 @@ const HeroSection = () => (
 
           <FadeIn delay={0.2}>
             <p className="text-lg md:text-xl text-secondary-text max-w-2xl mb-10 leading-relaxed font-inter">
-              Trading is not easy and involves risk. We use data-driven algorithmic systems.to
-              help you grow steadily.
+              Trading is not easy and involves risk. We use data-driven algorithmic systems to help you grow steadily.
             </p>
           </FadeIn>
 
@@ -594,13 +593,13 @@ const ContactSection = () => (
 
             <div className="grid sm:grid-cols-2 gap-6">
               {[
-                { icon: <Mail className="text-brand-accent" />, title: "Email Us", detail: "info@g7holdings.com", sub: "Replies within 24h" },
-                { icon: <Phone className="text-brand-accent" />, title: "Call Support", detail: "+91 98765 43210", sub: "Mon-Fri, 9am - 6pm" },
-                { icon: <MessageSquare className="text-brand-accent" />, title: "Direct Chat", detail: "WhatsApp Support", sub: "+91 98765 43211" },
-                { icon: <MapPin className="text-brand-accent" />, title: "Our Office", detail: "Hyderabad, India", sub: "Financial District" }
+                { icon: <Mail size={20} />, title: "Email Us", detail: "info@g7holdings.com", sub: "Replies within 24h" },
+                { icon: <Phone size={20} />, title: "Call Support", detail: "+91 98765 43210", sub: "Mon-Fri, 9am - 6pm" },
+                { icon: <MessageSquare size={20} />, title: "Direct Chat", detail: "WhatsApp Support", sub: "+91 98765 43211" },
+                { icon: <MapPin size={20} />, title: "Our Office", detail: "Hyderabad, India", sub: "Financial District" }
               ].map((item, i) => (
-                <div key={i} className="flex flex-row items-center gap-5 p-5 glass-card rounded-2xl hover:bg-white/[0.04] transition-colors group/card">
-                  <div className="p-3 bg-brand-accent/10 rounded-xl group-hover/card:bg-brand-accent/20 transition-colors shrink-0">
+                <div key={i} className="flex flex-row items-center gap-5 p-5 glass-card rounded-2xl hover:bg-white/[0.04] transition-all duration-300 group/card">
+                  <div className="p-3 rounded-full bg-white/5 text-white group-hover/card:bg-primary group-hover/card:text-primary-foreground transition-all duration-300 shrink-0">
                     {item.icon}
                   </div>
                   <div>
