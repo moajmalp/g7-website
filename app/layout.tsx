@@ -16,6 +16,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://g7holdings.com"),
   title: "G7 Holdings | Algorithmic Trading & Fintech Excellence",
   description: "G7 Holdings provides data-driven algorithmic trading systems designed for steady growth. Experience disciplined fintech solutions for a second source of income.",
   keywords: ["algorithmic trading", "fintech", "passive income", "data-driven trading", "G7 Holdings", "wealth management"],

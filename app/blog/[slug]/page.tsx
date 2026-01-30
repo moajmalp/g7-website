@@ -5,9 +5,10 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { FadeIn } from "@/components/ui/fade-in";
 import { blogs } from "@/lib/blog-data";
-import { ArrowLeft, Calendar, Clock, Share2, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Share2, Tag, Twitter, Facebook, Linkedin, Copy, Check } from "lucide-react";
 import Link from "next/link";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 
 export default function BlogDetail() {
     const { slug } = useParams();
@@ -20,6 +21,47 @@ export default function BlogDetail() {
         damping: 30,
         restDelta: 0.001
     });
+
+    const [isShareOpen, setIsShareOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
+    const shareRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (shareRef.current && !shareRef.current.contains(event.target as Node)) {
+                setIsShareOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
+    const shareUrl = typeof window !== 'undefined' ? window.location.href : '';
+    const shareTitle = blog?.title || '';
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(shareUrl);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    const shareLinks = [
+        {
+            name: "X (Twitter)",
+            icon: <Twitter size={16} />,
+            url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareTitle)}`
+        },
+        {
+            name: "Facebook",
+            icon: <Facebook size={16} />,
+            url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`
+        },
+        {
+            name: "LinkedIn",
+            icon: <Linkedin size={16} />,
+            url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`
+        }
+    ];
 
     if (!blog) {
         return (
@@ -74,9 +116,52 @@ export default function BlogDetail() {
 
                                 <div className="flex items-center gap-6 text-sm text-secondary-text">
                                     <div className="flex items-center gap-2"><Calendar size={18} /> {blog.date}</div>
-                                    <button className="flex items-center gap-2 hover:text-primary transition-colors">
-                                        <Share2 size={18} /> Share
-                                    </button>
+                                    <div className="relative" ref={shareRef}>
+                                        <button
+                                            onClick={() => setIsShareOpen(!isShareOpen)}
+                                            className={`flex items-center gap-2 transition-colors ${isShareOpen ? 'text-primary' : 'hover:text-primary'}`}
+                                        >
+                                            <Share2 size={18} /> Share
+                                        </button>
+
+                                        <AnimatePresence>
+                                            {isShareOpen && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                                    className="absolute right-0 top-full mt-4 w-56 bg-brand-deep/95 backdrop-blur-xl border border-white/10 rounded-2xl p-3 shadow-2xl z-50 overflow-hidden"
+                                                >
+                                                    <div className="text-[10px] font-bold text-brand-muted uppercase tracking-widest px-3 mb-2">Share post</div>
+                                                    <div className="space-y-1">
+                                                        {shareLinks.map((link) => (
+                                                            <a
+                                                                key={link.name}
+                                                                href={link.url}
+                                                                target="_blank"
+                                                                rel="noopener noreferrer"
+                                                                className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 text-white transition-colors group/item"
+                                                            >
+                                                                <div className="text-secondary-text group-hover/item:text-primary transition-colors">
+                                                                    {link.icon}
+                                                                </div>
+                                                                <span className="text-sm font-medium">{link.name}</span>
+                                                            </a>
+                                                        ))}
+                                                        <button
+                                                            onClick={handleCopy}
+                                                            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 text-white transition-colors group/item"
+                                                        >
+                                                            <div className="text-secondary-text group-hover/item:text-primary transition-colors">
+                                                                {copied ? <Check size={16} className="text-primary" /> : <Copy size={16} />}
+                                                            </div>
+                                                            <span className="text-sm font-medium">{copied ? "Link Copied!" : "Copy Link"}</span>
+                                                        </button>
+                                                    </div>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
                                 </div>
                             </div>
                         </header>

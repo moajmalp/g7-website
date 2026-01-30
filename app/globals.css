@@ -28,6 +28,33 @@
     scroll-behavior: smooth;
   }
 
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-brand-deep);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2a4722;
+    /* Slightly lighter than deep */
+    border: 2px solid var(--color-brand-deep);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-accent);
+  }
+
+  /* Firefox */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #2a4722 var(--color-brand-deep);
+  }
+
   body {
     background-color: var(--color-brand-deep);
     background-image: radial-gradient(circle at top, rgba(157, 211, 25, 0.15) 0%, #183113 50%, #183113 100%);

@@ -22,11 +22,12 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { CustomDropdown } from "@/components/ui/custom-dropdown";
 
 // --- Components for sections ---
 
 const HeroSection = () => (
-  <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 overflow-hidden bg-brand-deep" aria-label="Welcome to G7 Holdings">
+  <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 md:pb-28 overflow-hidden bg-brand-deep" aria-label="Welcome to G7 Holdings">
     {/* Dynamic Background Elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
       <motion.div
@@ -66,7 +67,7 @@ const HeroSection = () => (
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold leading-[1.1] mb-8 tracking-tight">
               Build Your Second <br className="hidden md:block" />
               Income with <br className="hidden lg:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">Algo Trading</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">G7 Holdings</span>
             </h1>
           </FadeIn>
 
@@ -205,7 +206,7 @@ const HeroSection = () => (
 );
 
 const RealityCheckSection = () => (
-  <section className="py-24 md:py-32 bg-linear-to-b from-[#f1e8cb] to-[#e8dec0] text-dark relative overflow-hidden" aria-labelledby="reality-check-heading">
+  <section className="py-20 md:py-28 bg-white text-dark relative overflow-hidden" aria-labelledby="reality-check-heading">
     {/* Decorative Gradients */}
     <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
       <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-accent/20 rounded-full blur-[120px]" />
@@ -247,7 +248,7 @@ const RealityCheckSection = () => (
 );
 
 const FeaturesSection = () => (
-  <section id="platform" className="py-24 md:py-32 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="features-heading">
+  <section id="platform" className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="features-heading">
     {/* Animated Background Gradients */}
     <div className="absolute inset-0 pointer-events-none opacity-40">
       <motion.div
@@ -290,14 +291,14 @@ const FeaturesSection = () => (
 );
 
 const RequirementsSection = () => (
-  <section className="py-24 md:py-32 bg-linear-to-b from-[#f1e8cb] via-[#e8dec0] to-[#f1e8cb] text-dark relative overflow-hidden" aria-labelledby="requirements-heading">
+  <section className="py-20 md:py-28 bg-white text-dark relative overflow-hidden" aria-labelledby="requirements-heading">
     {/* Dynamic Background Gradients */}
     <div className="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none">
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-brand-gold/20 rounded-full blur-[140px]" />
     </div>
 
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
-      <div className="bg-white/40 backdrop-blur-xl border border-dark/10 rounded-[3rem] p-12 md:p-20 overflow-hidden relative shadow-2xl shadow-dark/5">
+      <div className="bg-dark/[0.03] backdrop-blur-xl border border-dark/5 rounded-[3rem] p-12 md:p-20 overflow-hidden relative shadow-2xl shadow-dark/5">
         <div className="absolute top-0 right-0 p-12 opacity-5">
           <Wallet size={160} className="text-dark" aria-hidden="true" />
         </div>
@@ -348,7 +349,7 @@ const RequirementsSection = () => (
 );
 
 const ComparisonSection = () => (
-  <section className="py-24 md:py-32 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep relative overflow-hidden">
+  <section className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep relative overflow-hidden">
     {/* Decorative Mesh Gradients */}
     <div className="absolute inset-0 pointer-events-none opacity-30">
       <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-brand-accent/10 rounded-full blur-[140px]" />
@@ -374,7 +375,7 @@ const ComparisonSection = () => (
         <FadeIn delay={0.2}>
           <div className="bg-brand-accent/[0.02] backdrop-blur-md border border-brand-accent/20 rounded-[2.5rem] p-10 md:p-14 h-full shadow-2xl shadow-brand-accent/5 hover:bg-brand-accent/[0.05] transition-all duration-500">
             <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-10 flex items-center justify-between text-white">
-              Copy Trading <CheckCircle2 className="text-brand-accent" size={32} />
+              G7 Holdings <CheckCircle2 className="text-brand-accent" size={32} />
             </h3>
             <ul className="space-y-6 text-brand-text-light text-lg">
               <li className="flex items-start gap-4">✅ Copy trading systems</li>
@@ -393,7 +394,7 @@ const ComparisonSection = () => (
 );
 
 const AudienceFilterSection = () => (
-  <section className="py-24 md:py-32 bg-linear-to-b from-[#f1e8cb] via-[#e8dec0] to-[#f1e8cb] text-dark relative overflow-hidden">
+  <section className="py-20 md:py-28 bg-white text-dark relative overflow-hidden">
     {/* Decorative Focal Light */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30 pointer-events-none">
       <div className="absolute top-0 right-[-10%] w-[50%] h-[50%] bg-brand-accent/20 rounded-full blur-[120px]" />
@@ -407,7 +408,7 @@ const AudienceFilterSection = () => (
       </FadeIn>
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
         <FadeIn>
-          <div className="p-10 md:p-14 border-l-4 border-brand-accent/30 bg-white/40 backdrop-blur-md rounded-r-[2.5rem] h-full transition-all hover:bg-white/60 hover:shadow-2xl hover:shadow-brand-accent/5">
+          <div className="p-10 md:p-14 border-l-4 border-brand-accent/30 bg-dark/[0.02] backdrop-blur-md rounded-r-[2.5rem] h-full transition-all hover:bg-dark/[0.04] hover:shadow-2xl hover:shadow-brand-accent/5">
             <h3 className="text-3xl font-outfit font-bold mb-10 text-dark">Yes, if you...</h3>
             <ul className="space-y-5 opacity-80 text-lg font-medium">
               <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-brand-accent shadow-[0_0_10px_rgba(157,211,25,0.8)]" /> Want a passive source of income</li>
@@ -435,7 +436,7 @@ const AudienceFilterSection = () => (
 );
 
 const TrustSection = () => (
-  <section id="about" className="pt-24 md:pt-32 pb-12 md:pb-16 bg-linear-to-b from-brand-deep via-[#13260f] to-brand-deep relative overflow-hidden" aria-labelledby="trust-heading">
+  <section id="about" className="pt-20 md:pt-28 pb-12 md:pb-16 bg-linear-to-b from-brand-deep via-[#13260f] to-brand-deep relative overflow-hidden" aria-labelledby="trust-heading">
     {/* Decorative Glow */}
     <div className="absolute inset-0 pointer-events-none opacity-20">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-accent/5 rounded-full blur-[160px]" />
@@ -461,7 +462,7 @@ const TrustSection = () => (
 );
 
 const MissionVisionSection = () => (
-  <section className="pt-12 md:pt-16 pb-24 md:pb-32 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep overflow-hidden relative" aria-labelledby="mission-vision-heading">
+  <section className="pt-12 md:pt-16 pb-20 md:pb-28 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep overflow-hidden relative" aria-labelledby="mission-vision-heading">
     <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-accent/5 blur-[160px] -z-10 pointer-events-none" aria-hidden="true" />
     <div className="absolute bottom-0 left-0 w-1/2 h-full bg-brand-gold/5 blur-[160px] -z-10 pointer-events-none" aria-hidden="true" />
 
@@ -520,7 +521,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-24 md:py-32 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="faq-heading">
+    <section className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="faq-heading">
       {/* Decorative Gradients */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="absolute top-0 right-[-10%] w-[50%] h-[50%] bg-brand-accent/5 rounded-full blur-[140px]" />
@@ -576,7 +577,7 @@ const FAQSection = () => {
 };
 
 const ContactSection = () => (
-  <section id="contact" className="py-24 md:py-32 bg-linear-to-b from-brand-deep via-[#11210c] to-brand-deep relative overflow-hidden" aria-labelledby="contact-heading">
+  <section id="contact" className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#11210c] to-brand-deep relative overflow-hidden" aria-labelledby="contact-heading">
     {/* Decorative Background Glows */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/5 rounded-full blur-[180px] -z-10" />
 
@@ -630,15 +631,15 @@ const ContactSection = () => (
                     <input type="email" placeholder="john@example.com" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors" />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-brand-muted uppercase tracking-widest px-1">Subject</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors appearance-none">
-                    <option className="bg-brand-deep">Algorithmic Trading Inquiry</option>
-                    <option className="bg-brand-deep">Investment Opportunity</option>
-                    <option className="bg-brand-deep">Technical Support</option>
-                    <option className="bg-brand-deep">Other</option>
-                  </select>
-                </div>
+                <CustomDropdown
+                  label="Subject"
+                  options={[
+                    "Algorithmic Trading Inquiry",
+                    "Investment Opportunity",
+                    "Technical Support",
+                    "Other"
+                  ]}
+                />
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-brand-muted uppercase tracking-widest px-1">Message</label>
                   <textarea rows={4} placeholder="Tell us about your trading goals..." className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-brand-accent/50 transition-colors resize-none"></textarea>
@@ -656,7 +657,7 @@ const ContactSection = () => (
 );
 
 const FooterCTA = () => (
-  <section className="py-24 md:py-32 relative overflow-hidden bg-linear-to-b from-brand-deep via-[#11210c] to-black">
+  <section className="py-20 md:py-28 relative overflow-hidden bg-linear-to-b from-brand-deep via-[#11210c] to-black">
     {/* Animated background circles */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/10 rounded-full blur-[180px] -z-10 animate-pulse" />
     <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/5 rounded-full blur-[140px] -z-10" />
