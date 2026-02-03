@@ -450,10 +450,10 @@ const TrustSection = () => (
         <h2 id="trust-heading" className="text-3xl md:text-6xl font-outfit font-bold mb-10 text-white tracking-tight">Who Is Behind G7 Holdings?</h2>
         <div className="max-w-4xl mx-auto space-y-8 text-brand-muted text-xl leading-relaxed font-medium">
           <p>
-            We are a group of engineers and traders who believe that the markets are too fast and too complex for manual emotional trading.
+            G7 Holdings is a group of professional traders and market experts with years of hands-on experience across different market conditions.
           </p>
           <p>
-            G7 Holdings was founded on the principle of transparency. We don&apos;t hide behind complex jargon. We build systems that follow mathematical proven advantages.
+            G7 Holdings focuses on transparent systems, clear rules, and strategies built on proven copy systems.
           </p>
         </div>
       </FadeIn>
