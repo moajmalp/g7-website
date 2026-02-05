@@ -330,10 +330,26 @@ const RequirementsSection = () => (
           <div className="flex-none text-center lg:text-left">
             <FadeIn direction="left">
               <div className="inline-block p-1 rounded-[2.5rem] bg-gradient-to-br from-brand-accent to-brand-gold shadow-2xl shadow-brand-accent/30">
-                <div className="bg-light rounded-[2.3rem] px-16 py-12">
-                  <p className="text-dark/60 text-sm uppercase font-black tracking-widest mb-4">Starting Capital</p>
-                  <div className="text-5xl md:text-6xl font-outfit font-black text-dark mb-4">₹1,00,000</div>
-                  <p className="text-sm text-dark/80 font-bold italic">Minimum commitment</p>
+                <div className="bg-light rounded-[2.3rem] px-12 py-10 md:px-14 md:py-12 text-center">
+                  <p className="text-dark/60 text-sm uppercase font-black tracking-widest mb-3">Capital Requirement</p>
+
+                  <div className="flex items-center justify-center gap-2 mb-4">
+                    <span className="text-5xl md:text-6xl font-outfit font-black text-dark">₹1L</span>
+                    <span className="text-3xl md:text-4xl font-black text-brand-accent/50">-</span>
+                    <span className="text-5xl md:text-6xl font-outfit font-black text-dark">₹10L</span>
+                  </div>
+
+                  <div className="space-y-3">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-dark/5 shadow-sm">
+                      <TrendingUp size={14} className="text-brand-accent" />
+                      <p className="text-sm text-dark/80 font-bold font-inter">
+                        Invest in multiples of <span className="text-dark">₹1 Lakh</span>
+                      </p>
+                    </div>
+                    <p className="text-xs text-dark/50 font-bold uppercase tracking-wider">
+                      Minimum Entry: ₹1,00,000
+                    </p>
+                  </div>
                 </div>
               </div>
               <p className="mt-10 text-sm font-semibold opacity-70 flex items-center justify-center lg:justify-start gap-2">

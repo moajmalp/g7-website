@@ -27,7 +27,7 @@ export const Footer = () => {
                             Disciplined fintech engineering for the modern investor. We bridge the gap between complex market data and consistent algorithmic execution.
                         </p>
                         <div className="flex gap-4 items-center">
-                            <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-primary-foreground transition-all duration-300" aria-label="Instagram">
+                            <a href="https://www.instagram.com/g7.holdings?igsh=ODhkcmxoNG80ZWJr" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-primary-foreground transition-all duration-300" aria-label="Instagram">
                                 <Instagram size={20} />
                             </a>
                             <a href="#" className="p-3 rounded-full bg-white/5 hover:bg-primary hover:text-primary-foreground transition-all duration-300" aria-label="Facebook">
@@ -70,11 +70,12 @@ export const Footer = () => {
                             {[
                                 { name: "Privacy Policy", href: "#" },
                                 { name: "Terms of Service", href: "#" },
-                                { name: "Risk Disclosure", href: "#" }
+                                { name: "Risk Disclosure", href: "/risk-disclosure", target: "_blank" }
                             ].map((link) => (
                                 <li key={link.name}>
                                     <Link
                                         href={link.href}
+                                        target={link.target}
                                         className="text-secondary-text hover:text-primary flex items-center gap-2 transition-colors group"
                                     >
                                         <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
