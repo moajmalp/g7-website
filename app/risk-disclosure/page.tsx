@@ -57,6 +57,12 @@ export default function RiskDisclosurePage() {
                                 </p>
                             </div>
 
+                            <div className="mt-12 p-6 rounded-xl bg-white/5 border border-white/10">
+                                <p className="text-white font-medium">
+                                    Stock Wyse, its owners, employees, partners, and associates shall NOT be responsible or liable for any financial loss, capital loss, profit loss, trading loss, or investment loss of any kind. All trading and investment decisions are taken solely at the client&apos;s own risk and responsibility. Client fully agrees that Stock Wyse holds no responsibility for any loss arising from trading in the securities market under any circumstances.
+                                </p>
+                            </div>
+
                         </div>
                     </FadeIn>
                 </div>
