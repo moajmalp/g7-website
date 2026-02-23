@@ -44,7 +44,7 @@ export default function BlogListing() {
                                             </div>
                                         </div>
 
-                                        <div className="p-8 flex flex-col flex-1">
+                                        <div className="p-6 md:p-8 flex flex-col flex-1">
                                             <div className="flex items-center gap-4 text-xs text-secondary-text mb-4">
                                                 <span className="flex items-center gap-1.5"><Calendar size={14} /> {blog.date}</span>
                                                 <span className="flex items-center gap-1.5"><Clock size={14} /> {blog.readTime}</span>
@@ -79,7 +79,7 @@ export default function BlogListing() {
 
                     {/* Newsletter Section */}
                     <FadeIn delay={0.4} className="mt-20">
-                        <div className="max-w-4xl mx-auto glass-card p-12 text-center relative overflow-hidden">
+                        <div className="max-w-4xl mx-auto glass-card p-8 md:p-12 text-center relative overflow-hidden">
                             <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50" />
                             <h3 className="text-3xl font-outfit font-bold mb-4">Stay Ahead of the Curve</h3>
                             <p className="text-secondary-text mb-8 max-w-lg mx-auto">

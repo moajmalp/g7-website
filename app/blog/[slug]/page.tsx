@@ -106,7 +106,7 @@ export default function BlogDetail() {
                                 {blog.title}
                             </h1>
 
-                            <div className="flex flex-wrap items-center justify-between gap-6 py-8 border-y border-white/10">
+                            <div className="flex flex-wrap items-center justify-between gap-6 py-6 md:py-8 border-y border-white/10">
                                 <div className="flex items-center gap-4">
                                     <Image src={blog.author.avatar} alt={blog.author.name} width={48} height={48} className="rounded-full ring-2 ring-primary/20" />
                                     <div>
@@ -186,9 +186,9 @@ export default function BlogDetail() {
                     <FadeIn delay={0.3}>
                         <div
                             className="prose prose-invert prose-lg max-w-none 
-                prose-h2:font-outfit prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+                prose-h2:font-outfit prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
                 prose-p:text-secondary-text prose-p:leading-relaxed prose-p:mb-6
-                prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:p-8 prose-blockquote:rounded-r-2xl prose-blockquote:italic
+                prose-blockquote:border-l-primary prose-blockquote:bg-primary/5 prose-blockquote:p-6 md:prose-blockquote:p-8 prose-blockquote:rounded-r-2xl prose-blockquote:italic
                 prose-strong:text-white"
                             dangerouslySetInnerHTML={{ __html: blog.content }}
                         />
@@ -208,7 +208,7 @@ export default function BlogDetail() {
                         </div>
 
                         {/* Author Bio Box */}
-                        <div className="mt-16 glass-card p-10 flex flex-col md:flex-row gap-8 items-center md:items-start">
+                        <div className="mt-16 glass-card p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center md:items-start">
                             <Image src={blog.author.avatar} alt={blog.author.name} width={96} height={96} className="rounded-full ring-4 ring-primary/20 bg-white/5" />
                             <div>
                                 <h4 className="text-xl font-outfit font-bold mb-2">Written by {blog.author.name}</h4>
