@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }}>
+    <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }} suppressHydrationWarning>
       <body
         className={`${jakarta.variable} ${outfit.variable} antialiased`}
       >

@@ -8,6 +8,7 @@ import { blogs } from "@/lib/blog-data";
 import { ArrowLeft, Calendar, Clock, Share2, Tag, Twitter, Facebook, Linkedin, Copy, Check } from "lucide-react";
 import Link from "next/link";
 import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 
 export default function BlogDetail() {
@@ -107,7 +108,7 @@ export default function BlogDetail() {
 
                             <div className="flex flex-wrap items-center justify-between gap-6 py-8 border-y border-white/10">
                                 <div className="flex items-center gap-4">
-                                    <img src={blog.author.avatar} alt={blog.author.name} className="w-12 h-12 rounded-full ring-2 ring-primary/20" />
+                                    <Image src={blog.author.avatar} alt={blog.author.name} width={48} height={48} className="rounded-full ring-2 ring-primary/20" />
                                     <div>
                                         <div className="font-bold text-white">{blog.author.name}</div>
                                         <div className="text-xs text-secondary-text">{blog.author.role}</div>
@@ -170,12 +171,14 @@ export default function BlogDetail() {
                     {/* Featured Image */}
                     <FadeIn delay={0.2}>
                         <div className="aspect-[21/9] w-full rounded-3xl mb-16 overflow-hidden relative shadow-2xl">
-                            <img
+                            <Image
                                 src={blog.image}
                                 alt={blog.title}
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                priority
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
                         </div>
                     </FadeIn>
 
@@ -206,7 +209,7 @@ export default function BlogDetail() {
 
                         {/* Author Bio Box */}
                         <div className="mt-16 glass-card p-10 flex flex-col md:flex-row gap-8 items-center md:items-start">
-                            <img src={blog.author.avatar} alt={blog.author.name} className="w-24 h-24 rounded-full ring-4 ring-primary/20 bg-white/5" />
+                            <Image src={blog.author.avatar} alt={blog.author.name} width={96} height={96} className="rounded-full ring-4 ring-primary/20 bg-white/5" />
                             <div>
                                 <h4 className="text-xl font-outfit font-bold mb-2">Written by {blog.author.name}</h4>
                                 <p className="text-secondary-text text-sm leading-relaxed mb-4">
