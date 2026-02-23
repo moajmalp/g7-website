@@ -35,6 +35,7 @@ export const FadeIn = ({ children, delay = 0, direction = "up", className = "" }
                 delay,
                 ease: [0.21, 0.47, 0.32, 0.98]
             }}
+            style={{ willChange: "transform, opacity" }}
             className={className}
         >
             {children}

@@ -12,10 +12,10 @@ const config: Config = {
                 "brand-deep": "#183113",
                 "brand-accent": "#9dd319",
                 "brand-gold": "#f2d070",
-                "brand-text-light": "#f1e8cb",
+                "brand-text-light": "#ffffff",
                 "brand-muted": "#acb98b",
                 background: "#183113",
-                foreground: "#f1e8cb",
+                foreground: "#ffffff",
             },
             fontFamily: {
                 sans: ["var(--font-outfit)", "ui-sans-serif", "system-ui"],

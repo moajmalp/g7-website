@@ -4,13 +4,13 @@
   --color-brand-deep: #183113;
   --color-brand-accent: #9dd319;
   --color-brand-gold: #f2d070;
-  --color-brand-text-light: #f1e8cb;
+  --color-brand-text-light: #ffffff;
   --color-brand-muted: #acb98b;
 
   --color-primary: var(--color-brand-accent);
   --color-secondary: var(--color-brand-gold);
   --color-dark: var(--color-brand-deep);
-  --color-light: var(--color-brand-text-light);
+  --color-light: #ffffff;
   --color-secondary-text: var(--color-brand-muted);
 
   --color-white: var(--color-brand-text-light);
@@ -57,10 +57,23 @@
 
   body {
     background-color: var(--color-brand-deep);
-    background-image: radial-gradient(circle at top, rgba(157, 211, 25, 0.15) 0%, #183113 50%, #183113 100%);
     color: var(--color-brand-text-light);
     font-family: var(--font-body);
     @apply antialiased;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle at top, rgba(157, 211, 25, 0.15) 0%, #183113 50%, #183113 100%);
+    z-index: -1;
+    pointer-events: none;
+    will-change: opacity;
   }
 
   h1,
@@ -95,7 +108,7 @@
   }
 
   .glass-surface {
-    @apply bg-[#183113]/40 backdrop-blur-xl border border-[#9dd319]/20 rounded-2xl;
+    @apply bg-[#183113]/40 backdrop-blur-lg border border-[#9dd319]/20 rounded-2xl;
   }
 
   .text-brand-gradient {
@@ -134,7 +147,7 @@
   }
 
   .glass-card {
-    @apply bg-[#183113]/40 backdrop-blur-xl border border-[#9dd319]/20 rounded-2xl p-6 transition-all duration-500 hover:bg-brand-accent/5 hover:border-brand-accent/30;
+    @apply bg-[#183113]/40 backdrop-blur-lg border border-[#9dd319]/20 rounded-2xl p-6 transition-all duration-500 hover:bg-brand-accent/5 hover:border-brand-accent/30;
   }
 
   /* Legacy compatibility or specific refined components */

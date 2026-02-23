@@ -7,6 +7,7 @@ import { blogs } from "@/lib/blog-data";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function BlogListing() {
     return (
@@ -29,12 +30,13 @@ export default function BlogListing() {
                                 <Link href={`/blog/${blog.id}`} className="group block h-full">
                                     <div className="glass-card overflow-hidden h-full flex flex-col border-white/5 group-hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 shadow-2xl">
                                         <div className="relative h-48 w-full bg-dark/50 overflow-hidden">
-                                            <img
+                                            <Image
                                                 src={blog.image}
                                                 alt={blog.title}
-                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                                            <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                                             <div className="absolute top-4 left-4">
                                                 <span className="px-3 py-1 rounded-full bg-brand-accent/40 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-brand-accent/30 shadow-lg">
                                                     {blog.category}
@@ -58,7 +60,7 @@ export default function BlogListing() {
 
                                             <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
                                                 <div className="flex items-center gap-2">
-                                                    <img src={blog.author.avatar} alt={blog.author.name} className="w-8 h-8 rounded-full bg-white/5" />
+                                                    <Image src={blog.author.avatar} alt={blog.author.name} width={32} height={32} className="rounded-full bg-white/5" />
                                                     <div className="flex flex-col">
                                                         <span className="text-xs font-bold text-white">{blog.author.name}</span>
                                                         <span className="text-[10px] text-secondary-text">{blog.author.role}</span>
@@ -78,7 +80,7 @@ export default function BlogListing() {
                     {/* Newsletter Section */}
                     <FadeIn delay={0.4} className="mt-20">
                         <div className="max-w-4xl mx-auto glass-card p-12 text-center relative overflow-hidden">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
+                            <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-primary to-transparent opacity-50" />
                             <h3 className="text-3xl font-outfit font-bold mb-4">Stay Ahead of the Curve</h3>
                             <p className="text-secondary-text mb-8 max-w-lg mx-auto">
                                 Get monthly deep-dives on market psychology and algorithmic efficiency delivered to your inbox.

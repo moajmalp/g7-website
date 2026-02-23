@@ -27,7 +27,7 @@ import { CustomDropdown } from "@/components/ui/custom-dropdown";
 // --- Components for sections ---
 
 const HeroSection = () => (
-  <section className="relative min-h-[85vh] flex items-center pt-24 pb-20 md:pb-28 overflow-hidden bg-brand-deep" aria-label="Welcome to G7 Holdings">
+  <section className="relative min-h-[80vh] flex items-center pt-20 pb-12 md:pt-24 md:pb-20 overflow-hidden bg-brand-deep" aria-label="Welcome to G7 Holdings">
     {/* Dynamic Background Elements */}
     <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none -z-10">
       <motion.div
@@ -38,7 +38,8 @@ const HeroSection = () => (
           y: [0, 30, 0],
         }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-accent rounded-full blur-[150px]"
+        className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand-accent rounded-full blur-[100px]"
+        style={{ willChange: "transform, opacity" }}
       />
       <motion.div
         animate={{
@@ -48,7 +49,8 @@ const HeroSection = () => (
           y: [0, -50, 0],
         }}
         transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-brand-gold rounded-full blur-[180px]"
+        className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-brand-gold rounded-full blur-[120px]"
+        style={{ willChange: "transform, opacity" }}
       />
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
     </div>
@@ -57,13 +59,13 @@ const HeroSection = () => (
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1 text-center lg:text-left">
           <FadeIn>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               Now Serving 100+ Disciplined Traders
-            </div>
+            </div> */}
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold leading-[1.1] mb-8 tracking-tight">
               Build Your Second <br className="hidden md:block" />
               Income with <br className="hidden lg:block" />
@@ -138,17 +140,17 @@ const HeroSection = () => (
                   />
 
                   {/* Nodes */}
-                  <motion.g animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity }}>
+                  <motion.g animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity }} style={{ willChange: "transform" }}>
                     <rect x="40" y="110" width="80" height="80" rx="20" fill="#12240e" stroke="#9dd319" strokeWidth="1.5" />
                     <text x="80" y="155" textAnchor="middle" fill="#9dd319" className="text-[10px] font-bold tracking-widest uppercase">Input</text>
                   </motion.g>
 
-                  <motion.g animate={{ y: [0, 5, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}>
+                  <motion.g animate={{ y: [0, 5, 0] }} transition={{ duration: 5, repeat: Infinity, delay: 0.5 }} style={{ willChange: "transform" }}>
                     <rect x="160" y="90" width="100" height="120" rx="25" fill="#1a2f15" stroke="#f2d070" strokeWidth="1.5" style={{ filter: 'url(#glow)' }} />
                     <text x="210" y="155" textAnchor="middle" fill="#f2d070" className="text-[12px] font-black tracking-widest uppercase">Logic</text>
                   </motion.g>
 
-                  <motion.g animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity, delay: 1 }}>
+                  <motion.g animate={{ y: [0, -5, 0] }} transition={{ duration: 4, repeat: Infinity, delay: 1 }} style={{ willChange: "transform" }}>
                     <rect x="300" y="110" width="80" height="80" rx="20" fill="#12240e" stroke="#9dd319" strokeWidth="1.5" />
                     <text x="340" y="155" textAnchor="middle" fill="#9dd319" className="text-[10px] font-bold tracking-widest uppercase">Result</text>
                   </motion.g>
@@ -206,7 +208,7 @@ const HeroSection = () => (
 );
 
 const RealityCheckSection = () => (
-  <section className="py-20 md:py-28 bg-white text-dark relative overflow-hidden" aria-labelledby="reality-check-heading">
+  <section className="py-8 md:py-20 bg-white text-dark relative overflow-hidden" aria-labelledby="reality-check-heading">
     {/* Decorative Gradients */}
     <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
       <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-brand-accent/20 rounded-full blur-[120px]" />
@@ -215,7 +217,7 @@ const RealityCheckSection = () => (
 
     <div className="container mx-auto px-6 max-w-5xl text-center relative z-10">
       <FadeIn>
-        <div className="max-w-3xl mx-auto mb-16">
+        <div className="max-w-3xl mx-auto mb-6 md:mb-12">
           <span className="text-secondary-foreground font-bold tracking-widest uppercase text-xs mb-4 block underline decoration-brand-accent/30 underline-offset-4">Disclaimer</span>
           <h2 id="reality-check-heading" className="text-3xl md:text-5xl font-outfit font-bold mb-8 text-dark">First, Let&apos;s Be Honest</h2>
           <p className="text-xl opacity-80 leading-relaxed">
@@ -248,23 +250,25 @@ const RealityCheckSection = () => (
 );
 
 const FeaturesSection = () => (
-  <section id="platform" className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="features-heading">
+  <section id="platform" className="py-8 md:py-20 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="features-heading">
     {/* Animated Background Gradients */}
     <div className="absolute inset-0 pointer-events-none opacity-40">
       <motion.div
         animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 10, repeat: Infinity }}
-        className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brand-accent/10 rounded-full blur-[150px]"
+        className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-brand-accent/10 rounded-full blur-[100px]"
+        style={{ willChange: "transform, opacity" }}
       />
       <motion.div
         animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 12, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-brand-gold/5 rounded-full blur-[150px]"
+        className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-brand-gold/5 rounded-full blur-[100px]"
+        style={{ willChange: "transform, opacity" }}
       />
     </div>
 
     <div className="container mx-auto px-6 max-w-5xl text-center relative z-10">
-      <FadeIn className="mb-20">
+      <FadeIn className="mb-8 md:mb-16">
         <h2 id="features-heading" className="text-3xl md:text-5xl font-outfit font-bold mb-6 text-white leading-tight">What We Help You Build</h2>
         <p className="text-xl text-brand-muted max-w-2xl mx-auto">An additional income stream built on systems and discipline.</p>
       </FadeIn>
@@ -291,17 +295,14 @@ const FeaturesSection = () => (
 );
 
 const RequirementsSection = () => (
-  <section className="py-20 md:py-28 bg-white text-dark relative overflow-hidden" aria-labelledby="requirements-heading">
+  <section className="py-8 md:py-20 bg-white text-dark relative overflow-hidden" aria-labelledby="requirements-heading">
     {/* Dynamic Background Gradients */}
     <div className="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none">
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-brand-gold/20 rounded-full blur-[140px]" />
     </div>
-
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
       <div className="bg-dark/[0.03] backdrop-blur-xl border border-dark/5 rounded-[3rem] p-12 md:p-20 overflow-hidden relative shadow-2xl shadow-dark/5">
-        <div className="absolute top-0 right-0 p-12 opacity-5">
-          <Wallet size={160} className="text-dark" aria-hidden="true" />
-        </div>
+
 
         <div className="flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <div className="flex-1">
@@ -330,7 +331,7 @@ const RequirementsSection = () => (
           <div className="flex-none text-center lg:text-left">
             <FadeIn direction="left">
               <div className="inline-block p-1 rounded-[2.5rem] bg-gradient-to-br from-brand-accent to-brand-gold shadow-2xl shadow-brand-accent/30">
-                <div className="bg-light rounded-[2.3rem] px-12 py-10 md:px-14 md:py-12 text-center">
+                <div className="bg-white rounded-[2.3rem] px-12 py-10 md:px-14 md:py-12 text-center">
                   <p className="text-dark/60 text-sm uppercase font-black tracking-widest mb-3">Capital Requirement</p>
 
                   <div className="flex items-center justify-center gap-2 mb-4">
@@ -342,8 +343,8 @@ const RequirementsSection = () => (
                   <div className="space-y-3">
                     <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-dark/5 shadow-sm">
                       <TrendingUp size={14} className="text-brand-accent" />
-                      <p className="text-sm text-dark/80 font-bold font-inter">
-                        Invest in multiples of <span className="text-dark">₹1 Lakh</span>
+                      <p className="text-sm text-dark/80 font-bold font-inter leading-tight">
+                        Invest in multiples of <br className="sm:hidden" /> <span className="text-dark">₹1 Lakh</span>
                       </p>
                     </div>
                     <p className="text-xs text-dark/50 font-bold uppercase tracking-wider">
@@ -365,7 +366,7 @@ const RequirementsSection = () => (
 );
 
 const ComparisonSection = () => (
-  <section className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep relative overflow-hidden">
+  <section className="py-8 md:py-20 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep relative overflow-hidden">
     {/* Decorative Mesh Gradients */}
     <div className="absolute inset-0 pointer-events-none opacity-30">
       <div className="absolute top-[20%] left-[-10%] w-[50%] h-[50%] bg-brand-accent/10 rounded-full blur-[140px]" />
@@ -410,7 +411,7 @@ const ComparisonSection = () => (
 );
 
 const AudienceFilterSection = () => (
-  <section className="py-20 md:py-28 bg-white text-dark relative overflow-hidden">
+  <section className="py-8 md:py-20 bg-white text-dark relative overflow-hidden">
     {/* Decorative Focal Light */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-30 pointer-events-none">
       <div className="absolute top-0 right-[-10%] w-[50%] h-[50%] bg-brand-accent/20 rounded-full blur-[120px]" />
@@ -418,7 +419,7 @@ const AudienceFilterSection = () => (
     </div>
 
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
-      <FadeIn className="text-center mb-20">
+      <FadeIn className="text-center mb-8 md:mb-16">
         <h2 className="text-3xl md:text-5xl font-outfit font-bold mb-6 text-dark leading-tight">Is This Right for You?</h2>
         <p className="text-xl opacity-70 max-w-2xl mx-auto">Find out if our copy trading system works for your second income goals.</p>
       </FadeIn>
@@ -452,7 +453,7 @@ const AudienceFilterSection = () => (
 );
 
 const TrustSection = () => (
-  <section id="about" className="pt-20 md:pt-28 pb-12 md:pb-16 bg-linear-to-b from-brand-deep via-[#13260f] to-brand-deep relative overflow-hidden" aria-labelledby="trust-heading">
+  <section id="about" className="pt-8 md:pt-20 pb-4 md:pb-12 bg-linear-to-b from-brand-deep via-[#13260f] to-brand-deep relative overflow-hidden" aria-labelledby="trust-heading">
     {/* Decorative Glow */}
     <div className="absolute inset-0 pointer-events-none opacity-20">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-brand-accent/5 rounded-full blur-[160px]" />
@@ -478,7 +479,7 @@ const TrustSection = () => (
 );
 
 const MissionVisionSection = () => (
-  <section className="pt-12 md:pt-16 pb-20 md:pb-28 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep overflow-hidden relative" aria-labelledby="mission-vision-heading">
+  <section className="pt-4 md:pt-12 pb-8 md:pb-20 bg-linear-to-b from-brand-deep via-[#11210d] to-brand-deep overflow-hidden relative" aria-labelledby="mission-vision-heading">
     <div className="absolute top-0 right-0 w-1/2 h-full bg-brand-accent/5 blur-[160px] -z-10 pointer-events-none" aria-hidden="true" />
     <div className="absolute bottom-0 left-0 w-1/2 h-full bg-brand-gold/5 blur-[160px] -z-10 pointer-events-none" aria-hidden="true" />
 
@@ -537,7 +538,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="faq-heading">
+    <section className="py-8 md:py-20 bg-linear-to-b from-brand-deep via-[#12240e] to-brand-deep relative overflow-hidden" aria-labelledby="faq-heading">
       {/* Decorative Gradients */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <div className="absolute top-0 right-[-10%] w-[50%] h-[50%] bg-brand-accent/5 rounded-full blur-[140px]" />
@@ -545,7 +546,7 @@ const FAQSection = () => {
       </div>
 
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <FadeIn className="text-center mb-20">
+        <FadeIn className="text-center mb-8 md:mb-16">
           <h2 id="faq-heading" className="text-3xl md:text-6xl font-outfit font-bold mb-6 text-white tracking-tight">Frequently Asked Questions</h2>
           <p className="text-xl text-brand-muted font-medium">Clear answers to your most common questions.</p>
         </FadeIn>
@@ -573,6 +574,7 @@ const FAQSection = () => {
                     initial={false}
                     animate={{ height: openIndex === i ? 'auto' : 0, opacity: openIndex === i ? 1 : 0 }}
                     transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                    style={{ willChange: "height, opacity" }}
                     className="overflow-hidden"
                     id={`faq-answer-${i}`}
                     role="region"
@@ -593,18 +595,18 @@ const FAQSection = () => {
 };
 
 const ContactSection = () => (
-  <section id="contact" className="py-20 md:py-28 bg-linear-to-b from-brand-deep via-[#11210c] to-brand-deep relative overflow-hidden" aria-labelledby="contact-heading">
+  <section id="contact" className="py-8 md:py-20 bg-linear-to-b from-brand-deep via-[#11210c] to-brand-deep relative overflow-hidden" aria-labelledby="contact-heading">
     {/* Decorative Background Glows */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/5 rounded-full blur-[180px] -z-10" />
 
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
-      <div className="flex flex-col lg:flex-row gap-16">
+      <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
         {/* Contact Info Side */}
         <div className="flex-1">
           <FadeIn>
             <span className="text-brand-accent font-bold tracking-widest uppercase text-xs mb-4 block underline decoration-brand-accent/30 underline-offset-4">Get in Touch</span>
-            <h2 id="contact-heading" className="text-4xl md:text-6xl font-outfit font-bold mb-8 text-white leading-tight">Let&apos;s Discuss Your <br /> Wealth Strategy</h2>
-            <p className="text-xl text-brand-muted mb-12 max-w-lg leading-relaxed">
+            <h2 id="contact-heading" className="text-3xl md:text-6xl font-outfit font-bold mb-6 text-white leading-tight">Let&apos;s Discuss Your <br /> Wealth Strategy</h2>
+            <p className="text-lg text-brand-muted mb-8 max-w-lg leading-relaxed">
               Whether you have questions about our algorithms or want to join our elite community, our team is ready to assist.
             </p>
 
@@ -673,10 +675,10 @@ const ContactSection = () => (
 );
 
 const FooterCTA = () => (
-  <section className="py-20 md:py-28 relative overflow-hidden bg-linear-to-b from-brand-deep via-[#11210c] to-black">
+  <section className="py-12 md:py-20 relative overflow-hidden bg-linear-to-b from-brand-deep via-[#11210c] to-black">
     {/* Animated background circles */}
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/10 rounded-full blur-[180px] -z-10 animate-pulse" />
-    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/5 rounded-full blur-[140px] -z-10" />
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-brand-accent/10 rounded-full blur-[120px] -z-10 animate-pulse" style={{ willChange: "opacity" }} />
+    <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-brand-gold/5 rounded-full blur-[100px] -z-10" />
 
     <div className="container mx-auto px-6 max-w-5xl">
       <FadeIn>
