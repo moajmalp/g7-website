@@ -39,52 +39,55 @@ export const Footer = () => {
                         </div>
                     </FadeIn>
 
-                    {/* Column 2: Quick Links */}
-                    <FadeIn delay={0.1}>
-                        <h3 className="text-white font-outfit font-bold text-lg mb-8 uppercase tracking-widest">Quick Links</h3>
-                        <ul className="space-y-4">
-                            {[
-                                { name: "Home", href: "/" },
-                                { name: "About", href: "/#about" },
-                                { name: "Blog", href: "/blog" },
-                                { name: "Contact", href: "/#contact" },
-                                { name: "FAQ", href: "/#faq-heading" }
-                            ].map((link) => (
-                                <li key={link.name}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-secondary-text hover:text-primary flex items-center gap-2 transition-colors group"
-                                    >
-                                        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </FadeIn>
+                    {/* Grouping Quick Links and Resources for mobile row alignment */}
+                    <div className="grid grid-cols-2 gap-8 md:gap-12 col-span-full md:col-span-2 lg:contents">
+                        {/* Column 2: Quick Links */}
+                        <FadeIn delay={0.1}>
+                            <h3 className="text-white font-outfit font-bold text-lg mb-8 uppercase tracking-widest">Quick Links</h3>
+                            <ul className="space-y-4">
+                                {[
+                                    { name: "Home", href: "/" },
+                                    { name: "About", href: "/#about" },
+                                    { name: "Blog", href: "/blog" },
+                                    { name: "Contact", href: "/#contact" },
+                                    { name: "FAQ", href: "/#faq-heading" }
+                                ].map((link) => (
+                                    <li key={link.name}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-secondary-text hover:text-primary flex items-center gap-2 transition-colors group"
+                                        >
+                                            <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </FadeIn>
 
-                    {/* Column 3: Resources */}
-                    <FadeIn delay={0.2}>
-                        <h3 className="text-white font-outfit font-bold text-lg mb-8 uppercase tracking-widest">Resources</h3>
-                        <ul className="space-y-4">
-                            {[
-                                { name: "Privacy Policy", href: "#" },
-                                { name: "Terms of Service", href: "#" },
-                                { name: "Risk Disclosure", href: "/risk-disclosure", target: "_blank" }
-                            ].map((link) => (
-                                <li key={link.name}>
-                                    <Link
-                                        href={link.href}
-                                        target={link.target}
-                                        className="text-secondary-text hover:text-primary flex items-center gap-2 transition-colors group"
-                                    >
-                                        <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                                        {link.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </FadeIn>
+                        {/* Column 3: Resources */}
+                        <FadeIn delay={0.2}>
+                            <h3 className="text-white font-outfit font-bold text-lg mb-8 uppercase tracking-widest">Resources</h3>
+                            <ul className="space-y-4">
+                                {[
+                                    { name: "Privacy Policy", href: "#" },
+                                    { name: "Terms of Service", href: "#" },
+                                    { name: "Risk Disclosure", href: "/risk-disclosure", target: "_blank" }
+                                ].map((link) => (
+                                    <li key={link.name}>
+                                        <Link
+                                            href={link.href}
+                                            target={link.target}
+                                            className="text-secondary-text hover:text-primary flex items-center gap-2 transition-colors group"
+                                        >
+                                            <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </FadeIn>
+                    </div>
 
                     {/* Column 4: Contact Info */}
                     <FadeIn delay={0.3}>

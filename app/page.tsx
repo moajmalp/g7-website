@@ -59,14 +59,7 @@ const HeroSection = () => (
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         <div className="flex-1 text-center lg:text-left">
           <FadeIn>
-            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-sm">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              Now Serving 100+ Disciplined Traders
-            </div> */}
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold leading-[1.1] mb-8 tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-bold leading-[1.1] mb-6 md:mb-8 tracking-tight">
               Build Your Second <br className="hidden md:block" />
               Income with <br className="hidden lg:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary italic">G7 Holdings</span>
@@ -226,7 +219,7 @@ const RealityCheckSection = () => (
         </div>
       </FadeIn>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
         {[
           { text: "Use proven strategies", icon: <ShieldCheck className="text-dark" /> },
           { text: "Keep emotions out", icon: <Zap className="text-dark" /> },
@@ -234,7 +227,7 @@ const RealityCheckSection = () => (
           { text: "Stay consistent", icon: <TrendingUp className="text-dark" /> }
         ].map((item, i) => (
           <FadeIn key={i} delay={i * 0.1} className="h-full">
-            <div className="bg-dark/5 backdrop-blur-sm border border-dark/10 rounded-2xl flex flex-col items-center text-center p-10 transition-all hover:bg-dark/10 h-full hover:shadow-xl hover:shadow-brand-accent/5">
+            <div className="bg-dark/5 backdrop-blur-sm border border-dark/10 rounded-2xl flex flex-col items-center text-center p-8 md:p-10 transition-all hover:bg-dark/10 h-full hover:shadow-xl hover:shadow-brand-accent/5">
               <div className="mb-6 p-4 bg-dark/5 rounded-full">{item.icon}</div>
               <p className="font-inter font-semibold leading-relaxed text-base">{item.text}</p>
             </div>
@@ -273,14 +266,14 @@ const FeaturesSection = () => (
         <p className="text-xl text-brand-muted max-w-2xl mx-auto">An additional income stream built on systems and discipline.</p>
       </FadeIn>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
           { title: "A System, Not Guesswork", desc: "Every trade is backed by a backtested strategy, not gut feelings or news hype.", icon: <Cpu size={32} /> },
           { title: "Automated Execution", desc: "Our systems run in the background, executing trades instantly without human delay.", icon: <Zap size={32} /> },
           { title: "Monthly Profit Withdrawals", desc: "Designed for steady growth with the discipline of regular, sustainable payouts.", icon: <Wallet size={32} /> }
         ].map((feature, i) => (
           <FadeIn key={i} delay={i * 0.2} className="h-full">
-            <div className="glass-card h-full text-left flex flex-col items-start p-10 group hover:border-brand-accent/40 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04]">
+            <div className="glass-card h-full text-left flex flex-col items-start p-8 md:p-10 group hover:border-brand-accent/40 transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.04]">
               <div className="mb-8 p-4 bg-brand-accent/10 rounded-2xl text-brand-accent transition-all duration-500 group-hover:bg-brand-accent group-hover:text-brand-deep group-hover:shadow-[0_0_20px_rgba(157,211,25,0.4)]">
                 {feature.icon}
               </div>
@@ -301,16 +294,16 @@ const RequirementsSection = () => (
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-brand-gold/20 rounded-full blur-[140px]" />
     </div>
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
-      <div className="bg-dark/[0.03] backdrop-blur-xl border border-dark/5 rounded-[3rem] p-12 md:p-20 overflow-hidden relative shadow-2xl shadow-dark/5">
+      <div className="bg-dark/[0.03] backdrop-blur-xl border border-dark/5 rounded-[2rem] md:rounded-[3rem] p-8 md:p-20 overflow-hidden relative shadow-2xl shadow-dark/5">
 
 
         <div className="flex flex-col lg:flex-row items-center gap-16 relative z-10">
-          <div className="flex-1">
+          <div className="flex-1 text-center lg:text-left">
             <FadeIn>
               <h2 id="requirements-heading" className="text-3xl md:text-5xl font-outfit font-bold mb-8 text-dark leading-tight">What You Need <br /> to Start</h2>
               <p className="text-lg opacity-70 mb-10 max-w-lg">We focus on seriousness and discipline. To participate in our copy trading strategy, you need:</p>
 
-              <ul className="space-y-6">
+              <ul className="space-y-6 text-left inline-block lg:block">
                 {[
                   "A demat account with a supported broker",
                   "Minimum capital requirement to handle margin",
@@ -374,10 +367,10 @@ const ComparisonSection = () => (
     </div>
 
     <div className="container mx-auto px-6 max-w-6xl relative z-10">
-      <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         <FadeIn>
-          <div className="bg-white/[0.03] backdrop-blur-md border border-red-500/10 rounded-[2.5rem] p-10 md:p-14 h-full hover:bg-white/[0.05] transition-all duration-500">
-            <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-10 flex items-center justify-between text-white">
+          <div className="bg-white/[0.03] backdrop-blur-md border border-red-500/10 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-14 h-full hover:bg-white/[0.05] transition-all duration-500">
+            <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-8 md:mb-10 flex items-center justify-between text-white">
               Manual Trading <XCircle className="text-red-500" size={32} />
             </h3>
             <ul className="space-y-6 text-brand-muted text-lg">
@@ -390,8 +383,8 @@ const ComparisonSection = () => (
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="bg-brand-accent/[0.02] backdrop-blur-md border border-brand-accent/20 rounded-[2.5rem] p-10 md:p-14 h-full shadow-2xl shadow-brand-accent/5 hover:bg-brand-accent/[0.05] transition-all duration-500">
-            <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-10 flex items-center justify-between text-white">
+          <div className="bg-brand-accent/[0.02] backdrop-blur-md border border-brand-accent/20 rounded-[2rem] md:rounded-[2.5rem] p-8 md:p-14 h-full shadow-2xl shadow-brand-accent/5 hover:bg-brand-accent/[0.05] transition-all duration-500">
+            <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-8 md:mb-10 flex items-center justify-between text-white">
               G7 Holdings <CheckCircle2 className="text-brand-accent" size={32} />
             </h3>
             <ul className="space-y-6 text-brand-text-light text-lg">
@@ -423,10 +416,10 @@ const AudienceFilterSection = () => (
         <h2 className="text-3xl md:text-5xl font-outfit font-bold mb-6 text-dark leading-tight">Is This Right for You?</h2>
         <p className="text-xl opacity-70 max-w-2xl mx-auto">Find out if our copy trading system works for your second income goals.</p>
       </FadeIn>
-      <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
         <FadeIn>
-          <div className="p-10 md:p-14 border-l-4 border-brand-accent/30 bg-dark/[0.02] backdrop-blur-md rounded-r-[2.5rem] h-full transition-all hover:bg-dark/[0.04] hover:shadow-2xl hover:shadow-brand-accent/5">
-            <h3 className="text-3xl font-outfit font-bold mb-10 text-dark">Yes, if you...</h3>
+          <div className="p-8 md:p-14 border-l-4 border-brand-accent/30 bg-dark/[0.02] backdrop-blur-md rounded-r-[2rem] md:rounded-r-[2.5rem] h-full transition-all hover:bg-dark/[0.04] hover:shadow-2xl hover:shadow-brand-accent/5">
+            <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-8 md:mb-10 text-dark">Yes, if you...</h3>
             <ul className="space-y-5 opacity-80 text-lg font-medium">
               <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-brand-accent shadow-[0_0_10px_rgba(157,211,25,0.8)]" /> Want a passive source of income</li>
               <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-brand-accent" /> Understand the value of automation</li>
@@ -437,8 +430,8 @@ const AudienceFilterSection = () => (
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="p-10 md:p-14 border-l-4 border-dark/10 bg-dark/[0.02] backdrop-blur-md rounded-r-[2.5rem] h-full transition-all hover:bg-dark/[0.04]">
-            <h3 className="text-3xl font-outfit font-bold mb-10 text-dark opacity-60">No, if you...</h3>
+          <div className="p-8 md:p-14 border-l-4 border-dark/10 bg-dark/[0.02] backdrop-blur-md rounded-r-[2rem] md:rounded-r-[2.5rem] h-full transition-all hover:bg-dark/[0.04]">
+            <h3 className="text-2xl md:text-3xl font-outfit font-bold mb-8 md:mb-10 text-dark opacity-60">No, if you...</h3>
             <ul className="space-y-5 opacity-60 text-lg font-medium">
               <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-dark/20" /> Want to get rich overnight</li>
               <li className="flex items-center gap-4"><div className="w-2 h-2 rounded-full bg-dark/20" /> Cannot handle any trading risk</li>
@@ -560,14 +553,14 @@ const FAQSection = () => {
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                    className="w-full flex items-center justify-between p-8 text-left focus:outline-none"
+                    className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none"
                     aria-expanded={openIndex === i}
                     aria-controls={`faq-answer-${i}`}
                     id={`faq-question-${i}`}
                   >
-                    <span className={`font-outfit font-bold text-xl md:text-2xl transition-colors duration-300 ${openIndex === i ? 'text-brand-accent' : 'text-white'}`}>{faq.q}</span>
-                    <div className={`p-2 rounded-full transition-all duration-500 shadow-lg ${openIndex === i ? 'bg-brand-accent text-brand-deep rotate-180 shadow-brand-accent/30' : 'bg-white/10 text-white'}`}>
-                      <ChevronDown size={24} aria-hidden="true" />
+                    <span className={`font-outfit font-bold text-lg md:text-2xl transition-colors duration-300 ${openIndex === i ? 'text-brand-accent' : 'text-white'}`}>{faq.q}</span>
+                    <div className={`p-1.5 md:p-2 rounded-full transition-all duration-500 shadow-lg shrink-0 ${openIndex === i ? 'bg-brand-accent text-brand-deep rotate-180 shadow-brand-accent/30' : 'bg-white/10 text-white'}`}>
+                      <ChevronDown size={20} className="md:w-6 md:h-6" aria-hidden="true" />
                     </div>
                   </button>
                   <motion.div
@@ -580,7 +573,7 @@ const FAQSection = () => {
                     role="region"
                     aria-labelledby={`faq-question-${i}`}
                   >
-                    <div className="p-8 pt-0 text-brand-muted leading-relaxed text-lg font-medium border-t border-white/5 mt-2">
+                    <div className="p-6 md:p-8 pt-0 text-brand-muted leading-relaxed text-base md:text-lg font-medium border-t border-white/5 mt-2">
                       {faq.a}
                     </div>
                   </motion.div>
@@ -635,7 +628,7 @@ const ContactSection = () => (
         {/* Contact Form Side */}
         <div className="flex-1">
           <FadeIn delay={0.2}>
-            <div className="glass-card p-10 md:p-14 rounded-[2.5rem] relative overflow-hidden group">
+            <div className="glass-card p-8 md:p-14 rounded-[2rem] md:rounded-[2.5rem] relative overflow-hidden group">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-accent/50 to-transparent opacity-50" />
               <h3 className="text-2xl font-outfit font-bold mb-8 text-white">Send Us a Message</h3>
               <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
@@ -682,7 +675,7 @@ const FooterCTA = () => (
 
     <div className="container mx-auto px-6 max-w-5xl">
       <FadeIn>
-        <div className="glass-card relative overflow-hidden p-12 md:p-20 text-center border-brand-accent/20 bg-white/[0.04] backdrop-blur-3xl rounded-[3rem] shadow-2xl shadow-brand-accent/5 group">
+        <div className="glass-card relative overflow-hidden p-8 md:p-20 text-center border-brand-accent/20 bg-white/[0.04] backdrop-blur-3xl rounded-[2.5rem] md:rounded-[3rem] shadow-2xl shadow-brand-accent/5 group">
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-outfit font-bold mb-8 text-white tracking-tight leading-tight group-hover:scale-[1.01] transition-transform duration-700">
               Ready to Take <br className="hidden md:block" /> the Next Step?
